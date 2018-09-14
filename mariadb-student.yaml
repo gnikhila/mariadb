@@ -1,0 +1,5 @@
+- name: sample from playbook
+  task :
+    - name : printing hello
+      debug :
+        msg : "Hellow from mariadb of git"
