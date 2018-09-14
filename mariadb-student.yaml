@@ -7,7 +7,7 @@
         name : "{{item}}"
         state : latest
       with_items :
-        - maridb
+        - mariadb
         - mariadb-server
     - name : mariadb server start
       service :
