@@ -1,5 +1,16 @@
-- name: sample from playbook
-  task :
-    - name : printing hello
-      debug :
-        msg : "Hellow from mariadb of git"
+- name: mariaDB setup
+  hosts : all
+  become : yes
+  tasks :
+    - name : mariadb installation
+      yum :
+        name : "{{item}}"
+        state : latest
+      with_items :
+        - maridb
+        - mariadb-server
+    - name : mariadb server start
+      service :
+        name : mariadb
+        state : started
+     
